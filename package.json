@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "prettier:check": "prettier . --check"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@axe-core/react": "^4.10.2",
