@@ -6,20 +6,16 @@ type State = {
   properties: Property[];
   isLoading: boolean;
   error: string | null;
-  selectedCity: string | null;
-  setProperties: (data: Property[]) => void;
-  setLoading: (state: boolean) => void;
-  setError: (msg: string | null) => void;
-  setSelectedCity: (city: string | null) => void;
+  setProperties: (properties: Property[]) => void;
+  setLoading: (isLoading: boolean) => void;
+  setError: (error: string | null) => void;
 };
 
 export const useProperties = create<State>((set) => ({
   properties: [],
-  isLoading: true,
+  isLoading: false,
   error: null,
-  selectedCity: null,
-  setProperties: (data) => set({ properties: data }),
-  setLoading: (state) => set({ isLoading: state }),
-  setError: (msg) => set({ error: msg }),
-  setSelectedCity: (city) => set({ selectedCity: city }),
+  setProperties: (properties) => set({ properties }),
+  setLoading: (isLoading) => set({ isLoading }),
+  setError: (error) => set({ error }),
 }));

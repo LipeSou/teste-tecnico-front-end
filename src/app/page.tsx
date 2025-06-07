@@ -11,6 +11,8 @@ import type { Property } from "@/types/properties";
 export default function Home() {
   const { setProperties, setLoading, setError } = useProperties();
 
+  // O endpoint original fornece imageUrl do Unsplash, mas o serviço está instável.
+  // Por isso, utilizei imagens locais mapeando o tipo do imóvel para arquivos estáticos na pasta /images.
   const transformImageUrls = (data: Property[]): Property[] => {
     const imageMap: Record<string, string> = {
       Apartamento: "apartment.png",
@@ -22,7 +24,7 @@ export default function Home() {
 
     return data.map((property) => ({
       ...property,
-      imageUrl: `/images/${imageMap[property.propertyType] || "default.png"}`,
+      imageUrl: `/images/${imageMap[property.propertyType] || "apartment.png"}`,
     }));
   };
   useEffect(() => {

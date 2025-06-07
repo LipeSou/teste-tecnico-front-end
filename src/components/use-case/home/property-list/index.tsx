@@ -1,15 +1,20 @@
 import { PropertyCard } from "@/components/common/property-card";
+import { useFilters } from "@/store/useFilters";
 import { useProperties } from "@/store/useProperties";
 
 export default function PropertyList() {
   const properties = useProperties((s) => s.properties);
-  const selectedCity = useProperties((s) => s.selectedCity);
-
   const isLoading = useProperties((s) => s.isLoading);
+  const { filters } = useFilters();
 
-  const filteredProperties = selectedCity
-    ? properties.filter((p) => `${p.city} - ${p.state}` === selectedCity)
-    : properties;
+  const filteredProperties = properties.filter((p) => {
+    const propertyLabel = `${p.city} - ${p.state}`;
+    const matchCity = filters.city ? propertyLabel === filters.city : true;
+
+    const matchType = filters.type ? p.propertyType === filters.type : true;
+
+    return matchCity && matchType;
+  });
 
   const renderPropertiesLoading = () => {
     return (
