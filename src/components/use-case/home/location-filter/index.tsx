@@ -40,7 +40,7 @@ export function LocationFilter() {
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Content
-          className="z-20 mt-2 bg-white rounded-xl shadow-xl p-4 w-72"
+          className="z-20 mt-2 bg-white rounded-xl shadow-xl p-4 w-72 h-48 overflow-auto"
           sideOffset={8}
         >
           <input
@@ -50,7 +50,7 @@ export function LocationFilter() {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full mb-3 px-3 py-2 rounded-md border border-gray-200 outline-none focus:ring"
           />
-          <div className="max-h-60 overflow-y-auto">
+          <div className="max-h-52 overflow-y-auto">
             {filtered.length === 0 && (
               <div className="text-center text-gray-400">
                 Nenhuma cidade encontrada
