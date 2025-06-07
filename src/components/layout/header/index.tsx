@@ -8,8 +8,8 @@ export default function Header() {
           href="/"
           className="font-heading font-semibold text-xl text-gray-800  focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded transition"
         >
-          <span className="text-gray-800">Seazone</span>
-          <span className="ml-2 text-primary">Teste</span>
+          <span className="text-gray-800 font-bold">Seazone</span>
+          <span className="ml-2 text-primary font-bold">Teste</span>
         </Link>
       </nav>
     </header>

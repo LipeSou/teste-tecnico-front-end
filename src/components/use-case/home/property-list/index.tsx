@@ -6,7 +6,6 @@ type PropertyListProps = {
 };
 
 export default function PropertyList({ properties }: PropertyListProps) {
-  console.log("properties", properties);
   return (
     <section
       className="m-10 flex flex-wrap -mx-3 mb-20 md:mb-40"

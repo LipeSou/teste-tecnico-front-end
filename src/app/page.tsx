@@ -31,12 +31,10 @@ export default function Home() {
       setLoading(true);
       try {
         const data = await fetchProperties();
-        console.log("data", data);
         const propertiesWithImageUrls = transformImageUrls(data);
         setProperties(propertiesWithImageUrls);
         setError(null);
       } catch (err) {
-        console.log("err", err);
         setError(`Erro ao carregar dados. ${err}`);
       } finally {
         setLoading(false);
@@ -51,14 +49,14 @@ export default function Home() {
         title="Encontre o imóvel ideal"
         description="Explore nossa lista de imóveis por temporada com fotos, avaliações e comodidades incríveis."
       />
-      <div className="pt-36 flex  flex-col">
+      <main className="pt-36 flex  flex-col">
         <h1 className="font-medium text-4xl text-center">
           Descubra imóveis disponíveis
         </h1>
 
         <PropertyFilters />
         <PropertyList properties={properties} />
-      </div>
+      </main>
     </>
   );
 }
