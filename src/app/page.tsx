@@ -9,7 +9,7 @@ import { useProperties } from "@/store/useProperties";
 import type { Property } from "@/types/properties";
 
 export default function Home() {
-  const { properties, setProperties, setLoading, setError } = useProperties();
+  const { setProperties, setLoading, setError } = useProperties();
 
   const transformImageUrls = (data: Property[]): Property[] => {
     const imageMap: Record<string, string> = {
