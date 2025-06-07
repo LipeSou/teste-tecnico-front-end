@@ -54,7 +54,7 @@ export default function Home() {
         </h1>
 
         <PropertyFilters />
-        <PropertyList properties={properties} />
+        <PropertyList />
       </main>
     </>
   );
