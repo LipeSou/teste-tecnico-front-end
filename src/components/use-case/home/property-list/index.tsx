@@ -1,4 +1,4 @@
-import PropertyCard from "@/components/common/property-card";
+import { PropertyCard } from "@/components/common/property-card";
 import type { Property } from "@/types/properties";
 
 type PropertyListProps = {
@@ -19,7 +19,21 @@ export default function PropertyList({ properties }: PropertyListProps) {
           key={index}
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-3 mb-24"
         >
-          <PropertyCard property={property} />
+          <PropertyCard.Root>
+            <PropertyCard.Image src={property.imageUrl} alt={property.title} />
+            <PropertyCard.Location
+              city={property.city}
+              state={property.state}
+              country={property.country}
+            />
+            {property.isAvailable && <PropertyCard.Availability />}
+          </PropertyCard.Root>
+          <PropertyCard.Title title={property.title} />
+          <PropertyCard.PriceAndRating
+            pricePerNight={property.pricePerNight}
+            rating={property.rating}
+            numberOfReviews={property.numberOfReviews}
+          />
         </div>
       ))}
     </section>
