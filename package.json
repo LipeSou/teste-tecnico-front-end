@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@axe-core/react": "^4.10.2",
+    "@radix-ui/react-popover": "^1.1.14",
     "@tabler/icons-react": "^3.34.0",
     "next": "15.3.3",
     "react": "^19.0.0",
