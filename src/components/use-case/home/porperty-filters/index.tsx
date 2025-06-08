@@ -8,7 +8,7 @@ export default function PropertyFilters() {
       <h2 id="filtros" className="sr-only">
         Filtros de imóveis
       </h2>
-      <div className="flex items-center justify-center gap-3 flex-row">
+      <div className="flex items-center justify-center gap-3 flex-col sm:flex-row">
         <LocationFilter />
         <FiltersDialog />
       </div>
