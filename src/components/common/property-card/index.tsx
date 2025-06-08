@@ -89,11 +89,15 @@ function PriceAndRating({
   rating,
   numberOfReviews,
 }: PriceAndRatingProps) {
+  const priceFormatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  });
   return (
     <div className="flex gap-1">
       <div className="flex items-center text-xl font-medium tracking-tighter">
-        <p className="text-base pr-2">R$</p>
-        <p>{pricePerNight}</p>
+        <p>{priceFormatter.format(pricePerNight)}</p>
         <p className="text-base pl-2"> por noite</p>
       </div>
       <div className="ml-5 mt-1 flex gap-1 items-center justify-center text-sm text-muted-foreground">

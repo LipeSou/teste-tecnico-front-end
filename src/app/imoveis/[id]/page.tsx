@@ -47,6 +47,12 @@ export default async function PropertyDetailsPage({ params }: Props) {
     `/images/flat.png`,
   ];
 
+  const priceFormatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  });
+
   async function getProperty(id: string): Promise<Property | null> {
     const res = await fetch(
       "https://run.mocky.io/v3/1dc4a564-c59c-4e3e-9f26-3d231f1cfea6",
@@ -76,7 +82,7 @@ export default async function PropertyDetailsPage({ params }: Props) {
         <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
           <div className="flex items-center gap-4">
             <span className="text-xl font-medium">
-              R$ {property.pricePerNight}
+              {priceFormatter.format(property.pricePerNight)}
               <span className="text-base font-normal ml-1">por noite</span>
             </span>
             {property.isAvailable && (

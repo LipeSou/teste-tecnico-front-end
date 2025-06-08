@@ -43,7 +43,7 @@ describe("PropertyCard", () => {
 
     expect(screen.getByText(/Casa de Praia/i)).toBeInTheDocument();
     expect(screen.getByText(/Floripa, SC - Brasil/i)).toBeInTheDocument();
-    expect(screen.getByText(/R\$ 350/i)).toBeInTheDocument();
+    expect(screen.getByText(/R\$\s*350,00/)).toBeInTheDocument();
     expect(screen.getByText(/Disponível/i)).toBeInTheDocument();
     expect(screen.getByText(/4.9 \(20 avaliações\)/)).toBeInTheDocument();
 
