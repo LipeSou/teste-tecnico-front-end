@@ -89,35 +89,36 @@ export default async function PropertyDetailsPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Simular Reserva */}
-      <section
-        className="fixed bottom-0 left-0 right-0 
+      <section className="mb-8 flex justify-between">
+        <div>
+          <h2 className="font-semibold text-lg mb-2">Descrição</h2>
+          <p className="text-muted-foreground">{property.description}</p>
+        </div>
+        {/* Simular Reserva */}
+        <section
+          className="fixed bottom-0 left-0 right-0 
             bg-white  z-50
             px-4 py-4 flex flex-col justify-end items-end
             md:static md:w-auto md:bg-transparent md:border-0 md:p-0 "
-      >
-        {!property.isAvailable && (
-          <span className="w-56 mb-1 text-red-500 text-xs font-medium text-right">
-            Indisponível para reserva no momento.
-          </span>
-        )}
-        <button
-          className="
+        >
+          {!property.isAvailable && (
+            <span className="w-56 mb-1 text-red-500 text-xs font-medium text-right">
+              Indisponível para reserva no momento.
+            </span>
+          )}
+          <button
+            className="
             w-48
             px-6 py-3 rounded-xl 
             bg-primary text-white font-semibold 
             hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:outline-none
             disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:opacity-70"
-          aria-label="Simular reserva"
-          disabled={!property.isAvailable}
-        >
-          Simular Reserva
-        </button>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="font-semibold text-lg mb-2">Descrição</h2>
-        <p className="text-muted-foreground">{property.description}</p>
+            aria-label="Simular reserva"
+            disabled={!property.isAvailable}
+          >
+            Simular Reserva
+          </button>
+        </section>
       </section>
 
       <section className="mb-8">
