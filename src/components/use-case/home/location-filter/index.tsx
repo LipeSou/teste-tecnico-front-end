@@ -35,7 +35,7 @@ export function LocationFilter() {
             className="flex items-center gap-2 bg-white rounded-full shadow-md px-4 py-2 w-full max-w-2xl border border-gray-200"
           >
             <IconSearch />
-            <span className="font-medium text-sm md:text-base">
+            <span className="font-medium  md:text-base">
               {selectedCity || "Selecionar cidade"}
             </span>
           </button>

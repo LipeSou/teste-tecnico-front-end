@@ -18,14 +18,14 @@ export default function TypeFilters() {
       label: "Apartamento",
       icon: <IconBuildingSkyscraper size={28} />,
     },
+    { key: "Cabana", label: "Cabana", icon: <IconHome size={28} /> },
+    { key: "Flat", label: "Flat", icon: <IconBed size={28} /> },
+    { key: "Chalé", label: "Chalé", icon: <IconHomeEco size={28} /> },
     {
       key: "Casa",
       label: "Casa de Praia",
       icon: <IconBeach size={28} />,
     },
-    { key: "Cabana", label: "Cabana", icon: <IconHome size={28} /> },
-    { key: "Flat", label: "Flat", icon: <IconBed size={28} /> },
-    { key: "Chalé", label: "Chalé", icon: <IconHomeEco size={28} /> },
   ];
 
   const handleSelect = (key: string) => {
@@ -36,7 +36,7 @@ export default function TypeFilters() {
     }
   };
   return (
-    <div className="flex sm:justify-center gap-4 mt-8 overflow-auto pb-2">
+    <div className="flex justify-center gap-4 mt-8 flex-wrap pb-2">
       {types.map((type) => (
         <button
           key={type.key}

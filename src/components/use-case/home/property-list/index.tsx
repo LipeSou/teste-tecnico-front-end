@@ -87,6 +87,7 @@ export default function PropertyList() {
                 <PropertyCard.Image
                   src={property.imageUrl}
                   alt={property.title}
+                  id={property.id}
                 />
                 <PropertyCard.Location
                   city={property.city}
@@ -95,7 +96,7 @@ export default function PropertyList() {
                 />
                 {property.isAvailable && <PropertyCard.Availability />}
               </PropertyCard.Root>
-              <PropertyCard.Title title={property.title} />
+              <PropertyCard.Title title={property.title} id={property.id} />
               <PropertyCard.PriceAndRating
                 pricePerNight={property.pricePerNight}
                 rating={property.rating}

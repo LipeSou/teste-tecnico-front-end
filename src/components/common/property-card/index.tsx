@@ -23,10 +23,11 @@ function Root({ children, className = "" }: RootProps) {
 type ImageComponentProps = {
   src: string;
   alt: string;
+  id: string;
 };
-function ImageComponent({ src, alt }: ImageComponentProps) {
+function ImageComponent({ src, alt, id }: ImageComponentProps) {
   return (
-    <Link className="block" href="#">
+    <Link className="block" href={`/imoveis/${id}`}>
       <Image
         src={src}
         alt={alt}
@@ -66,10 +67,11 @@ function Availability() {
 
 type TitleProps = {
   title: string;
+  id: string;
 };
-function Title({ title }: TitleProps) {
+function Title({ title, id }: TitleProps) {
   return (
-    <Link href="#">
+    <Link href={`/imoveis/${id}`}>
       <h3 className="mb-2 text-xl font-heading font-medium hover:underline">
         {title}
       </h3>
