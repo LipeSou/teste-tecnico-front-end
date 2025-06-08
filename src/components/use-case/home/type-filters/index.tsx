@@ -36,7 +36,7 @@ export default function TypeFilters() {
     }
   };
   return (
-    <div className="flex justify-center gap-4 mt-8 flex-wrap">
+    <div className="flex sm:justify-center gap-4 mt-8 overflow-auto pb-2">
       {types.map((type) => (
         <button
           key={type.key}

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-import PageHead from "@/components/common/PageHead";
+import PageHead from "@/components/common/page-head";
 import PropertyFilters from "@/components/use-case/home/porperty-filters";
 import PropertyList from "@/components/use-case/home/property-list";
 import { fetchProperties } from "@/lib/api/properties";
@@ -50,8 +50,8 @@ export default function Home() {
         title="Encontre o imóvel ideal"
         description="Explore nossa lista de imóveis por temporada com fotos, avaliações e comodidades incríveis."
       />
-      <main className="pt-36 flex  flex-col">
-        <h1 className="font-medium text-4xl text-center">
+      <main className="md:pt-36 pt-28 flex flex-col">
+        <h1 className="font-medium md:text-4xl text-3xl text-center">
           Descubra imóveis disponíveis
         </h1>
 

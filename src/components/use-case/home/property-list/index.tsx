@@ -8,12 +8,44 @@ export default function PropertyList() {
   const { filters } = useFilters();
 
   const filteredProperties = properties.filter((p) => {
+    // Cidade
     const propertyLabel = `${p.city} - ${p.state}`;
     const matchCity = filters.city ? propertyLabel === filters.city : true;
 
+    // Tipo
     const matchType = filters.type ? p.propertyType === filters.type : true;
 
-    return matchCity && matchType;
+    // Faixa de preço
+    const matchPrice = filters.priceRange
+      ? p.pricePerNight >= filters.priceRange[0] &&
+        p.pricePerNight <= filters.priceRange[1]
+      : true;
+
+    // Capacidade de hóspedes
+    const matchGuests = filters.guests ? p.maxGuests >= filters.guests : true;
+
+    // Quartos
+    const matchBedrooms = filters.bedrooms
+      ? p.bedrooms >= filters.bedrooms
+      : true;
+
+    // Comodidades (amenities: array)
+    const matchAmenities = filters.amenities.length
+      ? filters.amenities.every((a) => p.amenities?.includes(a))
+      : true;
+
+    // Disponibilidade
+    const matchAvailable = filters.availableOnly ? p.isAvailable : true;
+
+    return (
+      matchCity &&
+      matchType &&
+      matchPrice &&
+      matchGuests &&
+      matchBedrooms &&
+      matchAmenities &&
+      matchAvailable
+    );
   });
 
   const renderPropertiesLoading = () => {
