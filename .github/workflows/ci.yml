@@ -8,7 +8,7 @@ on:
 
 jobs:
   quality:
-    name: Lint + Typecheck + Prettier
+    name: Lint + Typecheck + Tests
     runs-on: ubuntu-latest
 
     steps:
