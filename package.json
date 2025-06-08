@@ -10,13 +10,15 @@
     "typecheck": "tsc --noEmit",
     "prettier:check": "prettier . --check",
     "prettier:fix": "prettier . --write",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@axe-core/react": "^4.10.2",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-popover": "^1.1.14",
     "@tabler/icons-react": "^3.34.0",
+    "embla-carousel-react": "^8.6.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

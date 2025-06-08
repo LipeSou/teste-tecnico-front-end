@@ -8,7 +8,6 @@ export const fetchProperties = async () => {
     if (!res.ok) throw new Error("Erro ao buscar imóveis");
     return await res.json();
   } catch (err) {
-    console.log("err", err);
-    return propertiesReturn;
+    return { success: false, error: err, data: propertiesReturn };
   }
 };

@@ -11,6 +11,7 @@ export type Property = {
   bathrooms: number;
   propertyType: string;
   imageUrl: string;
+  imageUrls?: string[];
   rating: number;
   numberOfReviews: number;
   isAvailable: boolean;

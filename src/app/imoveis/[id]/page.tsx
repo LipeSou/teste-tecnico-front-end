@@ -3,11 +3,11 @@ import {
   IconMapPinFilled,
   IconStarFilled,
 } from "@tabler/icons-react";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { PropertyButton } from "@/components/common/property-button";
 import { AmenityTag } from "@/components/use-case/imoveis/commodities/amenity-tag";
+import { PropertyCarousel } from "@/components/use-case/imoveis/property-carousel.tsx";
 import { ReservationModal } from "@/components/use-case/imoveis/reservation-modal";
 import type { Property } from "@/types/properties";
 
@@ -37,6 +37,15 @@ export default async function PropertyDetailsPage({ params }: Props) {
   const property = await getProperty(id);
 
   if (!property) return notFound();
+  // imagens mockadas para fazer um carousel
+  const images = [
+    property.imageUrl,
+    `/images/apartment.png`,
+    `/images/beach-house.png`,
+    `/images/cabin.png`,
+    `/images/chalet.png`,
+    `/images/flat.png`,
+  ];
 
   async function getProperty(id: string): Promise<Property | null> {
     const res = await fetch(
@@ -62,13 +71,7 @@ export default async function PropertyDetailsPage({ params }: Props) {
           </div>
         </div>
         <div className="relative w-full h-72 mb-4">
-          <Image
-            src={property.imageUrl}
-            alt={property.title}
-            fill
-            className="object-cover rounded-3xl"
-            priority
-          />
+          <PropertyCarousel images={images} alt={property.title} />
         </div>
         <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
           <div className="flex items-center gap-4">
