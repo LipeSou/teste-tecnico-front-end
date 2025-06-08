@@ -81,7 +81,7 @@ export default async function PropertyDetailsPage({ params }: Props) {
         </div>
         <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
           <div className="flex items-center gap-4">
-            <span className="text-xl font-medium">
+            <span className="text-base font-medium md:text-xl">
               {priceFormatter.format(property.pricePerNight)}
               <span className="text-base font-normal ml-1">por noite</span>
             </span>

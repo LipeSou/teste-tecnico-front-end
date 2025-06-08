@@ -13,7 +13,7 @@ type State = {
 
 export const useProperties = create<State>((set) => ({
   properties: [],
-  isLoading: false,
+  isLoading: true,
   error: null,
   setProperties: (properties) => set({ properties }),
   setLoading: (isLoading) => set({ isLoading }),

@@ -57,8 +57,7 @@ export default function PropertyList() {
               key={i}
               className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 px-3 mb-24"
             >
-              <div className="h-72 bg-gray-100 animate-pulse rounded-3xl mb-4"></div>
-              <div className="h-6 bg-gray-200 animate-pulse rounded mb-2"></div>
+              <div className="h-72 bg-gray-200 animate-pulse rounded mb-2"></div>
               <div className="h-4 w-1/2 bg-gray-100 animate-pulse rounded"></div>
             </div>
           ))
