@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Seazone Alugueis",
   description: "Encontre o lugar perfeito para suas férias",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
