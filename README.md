@@ -1,38 +1,128 @@
 ![CI Status](https://github.com/LipeSou/teste-tecnico-front-end/actions/workflows/ci.yml/badge.svg)
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  Seazone Aluguéis
 
-## Getting Started
+Seja bem vindo a Seazone Aluguéis aplicação front-end desenvolvida como parte de um teste técnico para simular uma mini plataforma de aluguel por temporada.
 
-First, run the development server:
+---
+
+## Tecnologias e Ferramentas
+
+- **Next.js 15** com App Router
+- **React 19**
+- **TypeScript**
+- **TailwindCSS 4**
+- **Zustand** para gerenciamento de estado global
+- **axe-core** para verificação de acessibilidade em tempo real
+- **tabler icons** para ícones
+- **ESLint + Prettier** para padronização de código
+- **Jest e React Testing Library** para testes unitários
+- **Radix** para um dialog e um popover com acessibilidade
+
+---
+
+## Deploy feito pela Vercel e CI CD no github pages
+
+- A aplicação está configurada para deploy automático na **Vercel** sempre que houver push na branch main.
+- **GitHub Actions** para Verificação de Código
+  - **Eslint** para verificação de padrões de código e boas práticas
+  - **Typescript** validação de tipagens
+  - **Jest** verificação dos testes
+
+---
+
+## Estrutura de pastas
+Foi baseada nesse artigo a estrutura de pastas do site
+https://dev.to/bajrayejoon/best-practices-for-organizing-your-nextjs-15-2025-53ji
+
+![image](https://github.com/user-attachments/assets/be21a92a-b0e2-4f31-9496-d6a15eac9932)
+
+- A pasta App fica responsável pelas rotas como é no next 15, com o layout para acessibilidade e coisas gerais.
+- A pasta componentes foi separada por common e use-cases. A common ela vai ser para componentes mais comuns que podem ser utilizados em qualquer tela e a use-cases foi separados por componentes mais especícos e separado por pastas com o nome da página.
+- A store fica o Zustand que é responsável pelo compartilhamnento de estado.
+- A lib seria funções utilitárias
+
+---
+
+## Acessibilidade
+No ambiente de desenvolvimento, esta aplicação utiliza o **axe-core** para detectar automaticamente problemas de acessibilidade diretamente no console do navegador.
+- A verificação é executada apenas em ambiente de desenvolvimento (npm run dev)
+- Nenhuma configuração adicional é necessária
+- No console o axe-core exibirá avisos sobre contraste, landmarks, ARIA e outros pontos de acessibilidade.
+
+![image](https://github.com/user-attachments/assets/c27ca8dc-1105-4968-b7e5-b0ac2f6d6326)
+
+---
+
+## API 
+Os dados vem diretamente de uma api, durante o desenvolvimento em um dado momento o site que hospeda os dados ficou fora do ar o que me fez a tomar a decisão de caso der erro e cair no catch ele retorne um mock que eu mockei dos dados da API para não compometer o teste.
+
+O endpoint original fornece imageUrl do Unsplash, mas o serviço está instável. Por isso, utilizei imagens locais mapeando o tipo do imóvel para arquivos.
+
+---
+
+## Testes
+- Foram feito dois pequenos testes os arquivos foram property-card.test.tsx e property-button.test.tsx eles ficam dentro da pasta do componente em uma pasta __tests__ 
+- Para rodar foi criado um script basta rodar npm run teste que ele vai rodar o jest
+
+---
+## Outras decisões técnicas
+- Uso do Zustand para gerenciamento leve e eficiente do estado global.
+- Axe-core para acessibilidade
+- Configuração de CI/CD híbrida com Vercel e GitHub Actions o github para fazer o CI e se passar a vercel builda automaticamente.
+- Radix componentes bem primitivos só que com acessibilidade
+
+---
+
+## Pontos que seriam melhorados tendo mais tempo
+- Colocaria paginação
+- Faria mais testes para englobar tudo
+- Deixaria ainda mais reutilizável
+
+---
+## Como rodar localmente
 
 ```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/seazone-rentals.git
+cd seazone-rentals
+
+# 2. Instale as dependências
+npm install
+
+# 3. Rode o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+````
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
+✅ Listagem de imóveis com imagem, localização, valor, avaliação e disponibilidade
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✅ Filtros por cidade, estado, tipo de imóvel, faixa de preço, comodidades, etc.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✅ Página de detalhes do imóvel com galeria, descrição e lista de comodidades
 
-## Learn More
+✅ Simulação de reserva com modal de confirmação
 
-To learn more about Next.js, take a look at the following resources:
+✅ Feedback de carregamento e erro ao consumir a API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ Responsividade mobile-first
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+✅ Componentização reutilizável (cards, filtros, modais)
 
-## Deploy on Vercel
+✅ Acessibilidade básica (landmarks, ARIA, contraste, navegação por teclado)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+✅ < Head /> do Next.js
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+## Imagens do site
+
+Página principal versão web e versão mobile
+![image](https://github.com/user-attachments/assets/c8d23218-cffb-4367-a1ac-11696bb4ad53)
+![image](https://github.com/user-attachments/assets/8dc72ea2-0018-47e7-95eb-80c5ffe34b37)
+
+Página de detalhes versão web e versão mobile
+![image](https://github.com/user-attachments/assets/e037761e-cbdb-48fd-a008-1602d57d1b23)
+![image](https://github.com/user-attachments/assets/4b455613-0dda-4b20-ab9a-17b2629847f8)
+
+
