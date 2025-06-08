@@ -2,7 +2,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { IconX } from "@tabler/icons-react";
 import { ReactNode } from "react";
 
-type DialogProps = {
+type PropertyDialogProps = {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
   trigger?: ReactNode;
@@ -13,7 +13,7 @@ type DialogProps = {
   className?: string;
 };
 
-export function Dialog({
+export function PropertyDialog({
   open,
   onOpenChange,
   trigger,
@@ -22,7 +22,7 @@ export function Dialog({
   children,
   showClose = true,
   className = "",
-}: DialogProps) {
+}: PropertyDialogProps) {
   return (
     <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
       {trigger && (

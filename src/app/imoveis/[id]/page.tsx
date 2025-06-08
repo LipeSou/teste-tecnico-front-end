@@ -6,7 +6,9 @@ import {
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+import { PropertyButton } from "@/components/common/property-button";
 import { AmenityTag } from "@/components/use-case/imoveis/commodities/amenity-tag";
+import { ReservationModal } from "@/components/use-case/imoveis/reservation-modal";
 import type { Property } from "@/types/properties";
 
 type Props = {
@@ -94,7 +96,7 @@ export default async function PropertyDetailsPage({ params }: Props) {
           <h2 className="font-semibold text-lg mb-2">Descrição</h2>
           <p className="text-muted-foreground">{property.description}</p>
         </div>
-        {/* Simular Reserva */}
+        {/* Fazer Reserva */}
         <section
           className="fixed bottom-0 left-0 right-0 
             bg-white  z-50
@@ -106,18 +108,17 @@ export default async function PropertyDetailsPage({ params }: Props) {
               Indisponível para reserva no momento.
             </span>
           )}
-          <button
-            className="
-            w-48
-            px-6 py-3 rounded-xl 
-            bg-primary text-white font-semibold 
-            hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:outline-none
-            disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:opacity-70"
-            aria-label="Simular reserva"
-            disabled={!property.isAvailable}
-          >
-            Simular Reserva
-          </button>
+          <ReservationModal
+            trigger={
+              <PropertyButton
+                aria-label="Fazer reserva"
+                disabled={!property.isAvailable}
+              >
+                Fazer Reserva
+              </PropertyButton>
+            }
+            propertyTitle={property.title}
+          />
         </section>
       </section>
 
