@@ -5,6 +5,7 @@
 Seja bem vindo a Seazone Aluguéis aplicação front-end desenvolvida como parte de um teste técnico para simular uma mini plataforma de aluguel por temporada.
 
 https://teste-tecnico-front-end-qb5y.vercel.app/
+
 ---
 
 ## Tecnologias e Ferramentas
