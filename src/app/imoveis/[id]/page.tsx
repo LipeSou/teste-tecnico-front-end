@@ -102,7 +102,7 @@ export default async function PropertyDetailsPage({ params }: Props) {
             md:static md:w-auto md:bg-transparent md:border-0 md:p-0 "
         >
           {!property.isAvailable && (
-            <span className="w-56 mb-1 text-red-500 text-xs font-medium text-right">
+            <span className="w-56 mb-1 text-red-700 text-xs font-medium text-right">
               Indisponível para reserva no momento.
             </span>
           )}
