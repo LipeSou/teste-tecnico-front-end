@@ -28,6 +28,9 @@ Seja bem vindo a Seazone Aluguéis aplicação front-end desenvolvida como parte
   - **Eslint** para verificação de padrões de código e boas práticas
   - **Typescript** validação de tipagens
   - **Jest** verificação dos testes
+  
+![image](https://github.com/user-attachments/assets/78217efa-1b31-493f-a023-714e8ede48f8)
+
 
 ---
 
@@ -71,30 +74,10 @@ O endpoint original fornece imageUrl do Unsplash, mas o serviço está instável
 - Axe-core para acessibilidade
 - Configuração de CI/CD híbrida com Vercel e GitHub Actions o github para fazer o CI e se passar a vercel builda automaticamente.
 - Radix componentes bem primitivos só que com acessibilidade
+- O componente card por ser um componente mais detalhado foi utilizado o pattern compound component para ficar melhor de manipular, fazer manutenção e testar. O jeito que fica seu uso:
+![image](https://github.com/user-attachments/assets/16f630a4-4d50-4a94-b31b-a5b77d307918)
 
 ---
-
-## Pontos que seriam melhorados tendo mais tempo
-- Colocaria paginação
-- Faria mais testes para englobar tudo
-- Deixaria ainda mais reutilizável
-
----
-## Como rodar localmente
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/seazone-rentals.git
-cd seazone-rentals
-
-# 2. Instale as dependências
-npm install
-
-# 3. Rode o servidor de desenvolvimento
-npm run dev
-````
----
-
 ## Funcionalidades
 ✅ Listagem de imóveis com imagem, localização, valor, avaliação e disponibilidade
 
@@ -113,6 +96,31 @@ npm run dev
 ✅ Acessibilidade básica (landmarks, ARIA, contraste, navegação por teclado)
 
 ✅ < Head /> do Next.js
+
+✅ Um carousel de imagens
+
+---
+## Como rodar localmente
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/seazone-rentals.git
+cd seazone-rentals
+
+# 2. Instale as dependências
+npm install
+
+# 3. Rode o servidor de desenvolvimento
+npm run dev
+````
+
+---
+
+## Pontos que seriam melhorados tendo mais tempo
+- Colocaria paginação
+- Faria mais testes para englobar tudo
+- Deixaria ainda mais reutilizável
+
 
 ---
 ## Imagens do site
