@@ -101,6 +101,10 @@ O endpoint original fornece imageUrl do Unsplash, mas o serviço está instável
 
 ✅ Um carousel de imagens
 
+
+![image](https://github.com/user-attachments/assets/9ae1df1b-c423-4f4f-a447-739f5bb853c6)
+
+
 ---
 ## Como rodar localmente
 
